@@ -12,10 +12,10 @@ for number in file:
   else:
     new_list.append(int(number))
 
-def count(list):
+def count(l):
   count = -1
   previous = 0
-  for number in list:
+  for number in l:
     if number > previous:
       count +=1
       previous = number
@@ -24,7 +24,20 @@ def count(list):
   return count
 
 #part two
+def total_sum(l):
+  total = []
+  for number in l:
+    index = l.index(number)
+    if index < len(l) - 2:
+      total.append(sum(l[index:index+3]))
+  return total
+
+
 
 if __name__ == '__main__':
+  #part one
   print(count(new_list))
   print(count(day_1_example))
+  #part two
+  print(count(total_sum(day_1_example)))
+  print(count(total_sum(new_list))) #not 1731
