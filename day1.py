@@ -25,19 +25,21 @@ def count(l):
 
 #part two
 def total_sum(l):
+  numbers = l
   total = []
-  for number in l:
-    index = l.index(number)
-    if index < len(l) - 2:
+  for number in numbers:
+    index = numbers.index(number)
+    if index < len(numbers) - 2:
       total.append(sum(l[index:index+3]))
+      numbers[index] = 0
   return total
 
 
 
 if __name__ == '__main__':
-  #part one
-  print(count(new_list))
-  print(count(day_1_example))
-  #part two
-  print(count(total_sum(day_1_example)))
-  print(count(total_sum(new_list))) #not 1731
+  print('part one')
+  print('input given:', count(new_list))
+  print('example given:', count(day_1_example), "\n")
+  print('part two')
+  print('example given:', count(total_sum(day_1_example)))
+  print('input given:', count(total_sum(new_list))) 
